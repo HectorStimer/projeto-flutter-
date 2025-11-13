@@ -7,17 +7,22 @@ class MedicalProvider extends ChangeNotifier {
 
   MedicalInfoModel? _info;
   MedicalInfoModel? get info => _info;
+  MedicalInfoModel? get medicalInfo => _info;
 
   bool get hasInfo => _info != null;
 
-  /// ✅ Carregar dados do storage
   Future<void> loadInfo() async {
     _info = await _storage.loadMedicalInfo();
     notifyListeners();
   }
 
-  /// ✅ Atualizar dados na memória + salvar
   Future<void> updateInfo(MedicalInfoModel info) async {
+    _info = info;
+    await _storage.saveMedicalInfo(info);
+    notifyListeners();
+  }
+
+  Future<void> saveInfo(MedicalInfoModel info) async {
     _info = info;
     await _storage.saveMedicalInfo(info);
     notifyListeners();

@@ -1,42 +1,42 @@
-import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../models/medical_info_model.dart';
 
-class MedicalInfoModel {
-  String nome;
-  String alergias;
-  String contatoEmergencia;
-  String convenio;
-  String observacoes;
+class StorageService {
+  static const String _infoKey = 'medical_info';
+  static const String _pinKey = 'user_pin';
 
-  MedicalInfoModel({
-    required this.nome,
-    required this.alergias,
-    required this.contatoEmergencia,
-    required this.convenio,
-    required this.observacoes,
-  });
-
-  Map<String, dynamic> toMap() {
-    return {
-      'nome': nome,
-      'alergias': alergias,
-      'contatoEmergencia': contatoEmergencia,
-      'convenio': convenio,
-      'observacoes': observacoes,
-    };
+  /// ✅ Salvar informações médicas
+  Future<void> saveMedicalInfo(MedicalInfoModel info) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_infoKey, info.toJson());
   }
 
-  factory MedicalInfoModel.fromMap(Map<String, dynamic> map) {
-    return MedicalInfoModel(
-      nome: map['nome'] ?? '',
-      alergias: map['alergias'] ?? '',
-      contatoEmergencia: map['contatoEmergencia'] ?? '',
-      convenio: map['convenio'] ?? '',
-      observacoes: map['observacoes'] ?? '',
-    );
+  /// ✅ Carregar informações médicas
+  Future<MedicalInfoModel?> loadMedicalInfo() async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = prefs.getString(_infoKey);
+
+    if (jsonString == null) return null;
+
+    return MedicalInfoModel.fromJson(jsonString);
   }
 
-  String toJson() => json.encode(toMap());
+  /// ✅ Salvar PIN
+  Future<void> savePin(String pin) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_pinKey, pin);
+  }
 
-  factory MedicalInfoModel.fromJson(String source) =>
-      MedicalInfoModel.fromMap(json.decode(source));
+  /// ✅ Verificar PIN
+  Future<bool> validatePin(String pin) async {
+    final prefs = await SharedPreferences.getInstance();
+    final savedPin = prefs.getString(_pinKey);
+    return savedPin == pin;
+  }
+
+  /// ✅ Verificar se já existe PIN salvo
+  Future<bool> hasPin() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.containsKey(_pinKey);
+  }
 }
