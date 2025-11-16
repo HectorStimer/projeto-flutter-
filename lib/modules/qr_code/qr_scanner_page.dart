@@ -12,7 +12,7 @@ class QrScannerPage extends StatelessWidget {
     try {
       final decoded = jsonDecode(data);
 
-      Navigator.pop(context, decoded); // ✅ Retorna dados para a tela anterior
+      Navigator.pop(context, decoded); // Retorna dados para a tela anterior
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("QR Code inválido!")),

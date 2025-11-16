@@ -71,7 +71,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               ),
             ),
 
-            /// PageView com itens
+            /// pageview com itens
             Expanded(
               child: PageView(
                 controller: _pageController,
@@ -84,7 +84,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               ),
             ),
 
-            /// Indicadores de página
+            /// indicadores de página
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Row(
@@ -106,7 +106,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               ),
             ),
 
-            /// Botões de navegação
+            /// botões de navegação
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
               child: Row(
@@ -134,7 +134,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                   const SizedBox(width: 12),
 
-                  /// Próximo / Começar
+                  /// próximo / começar
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {

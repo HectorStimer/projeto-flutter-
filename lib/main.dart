@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/// Widget que decide qual tela mostrar (lógica de inicialização)
+/// widget que decide qual tela mostrar (lógica de inicialização)
 class _AppEntry extends StatelessWidget {
   const _AppEntry();
 
@@ -62,17 +62,17 @@ class _AppEntry extends StatelessWidget {
     final hasPin = context.watch<PinProvider>().hasPin;
     final hasMedicalInfo = context.watch<MedicalProvider>().hasInfo;
 
-    // Primeira vez: onboarding
+    // primeira vez: onboarding
     if (!hasMedicalInfo) {
       return const OnboardingPage();
     }
 
-    // Se tem info mas sem PIN: criar PIN
+    // se tem info mas sem PIN: criar PIN
     if (!hasPin) {
       return const SetPinPage();
     }
 
-    // Tem PIN: verificar antes de entrar
+    // tem PIN: verificar antes de entrar
     return const CheckPinPage();
   }
 }

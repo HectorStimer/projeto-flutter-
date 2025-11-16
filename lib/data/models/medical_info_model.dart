@@ -56,7 +56,7 @@ class MedicalInfoModel {
     );
   }
 
-  /// Converter para Map (para facilitar acesso)
+  /// converter para Map (para facilitar acesso)
   Map<String, dynamic> toMap() {
     return {
       'name': name,

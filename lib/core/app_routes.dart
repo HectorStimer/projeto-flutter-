@@ -10,5 +10,4 @@ class AppRoutes {
 
   static const String initial = home;
 
-  // Map de rotas será configurado no main.dart com context
 }

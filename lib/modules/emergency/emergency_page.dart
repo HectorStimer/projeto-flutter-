@@ -80,7 +80,7 @@ class EmergencyPage extends StatelessWidget {
               )
             : Column(
                 children: [
-                  /// Dados médicos resumidos
+                  /// dados médicos resumidos
                   Expanded(
                     child: SingleChildScrollView(
                       padding: const EdgeInsets.all(16),
@@ -93,7 +93,7 @@ class EmergencyPage extends StatelessWidget {
                           ),
                           const SizedBox(height: 16),
 
-                          /// Card com dados
+                          /// card com dados
                           Container(
                             decoration: BoxDecoration(
                               color: AppColors.surface,

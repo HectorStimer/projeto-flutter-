@@ -7,20 +7,20 @@ class PinProvider extends ChangeNotifier {
   bool _hasPin = false;
   bool get hasPin => _hasPin;
 
-  /// ✅ Verificar se já existe PIN
+  ///  verificar se já existe PIN
   Future<void> loadPinStatus() async {
     _hasPin = await _storage.hasPin();
     notifyListeners();
   }
 
-  /// ✅ Salvar PIN
+  ///  salvar PIN
   Future<void> setPin(String pin) async {
     await _storage.savePin(pin);
     _hasPin = true;
     notifyListeners();
   }
 
-  /// ✅ Validar PIN
+  ///  validar PIN
   Future<bool> validatePin(String pin) async {
     return await _storage.validatePin(pin);
   }

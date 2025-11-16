@@ -19,7 +19,7 @@ class AppTheme {
       scaffoldBackgroundColor: AppColors.background,
       primaryColor: AppColors.primary,
 
-      /// ✅ AppBar
+      ///  AppBar
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.primary,
         elevation: 0,
@@ -30,7 +30,7 @@ class AppTheme {
         ),
       ),
 
-      /// ✅ Botões
+      ///  botões
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
@@ -42,7 +42,7 @@ class AppTheme {
         ),
       ),
 
-      /// ✅ Textos
+      /// textos
       textTheme: const TextTheme(
         bodyMedium: TextStyle(color: Colors.white, fontSize: 16),
         titleLarge: TextStyle(
@@ -52,7 +52,7 @@ class AppTheme {
         ),
       ),
 
-      /// ✅ Campos de texto
+      ///  campos de texto
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.surface,

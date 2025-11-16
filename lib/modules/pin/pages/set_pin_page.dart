@@ -85,11 +85,11 @@ class _SetPinPageState extends State<SetPinPage> {
               children: [
                 const SizedBox(height: 40),
 
-                /// Logo
+                /// logo
                 Icon(Icons.security, size: 80, color: AppColors.primary),
                 const SizedBox(height: 24),
 
-                /// Título
+                /// titulo
                 Text(
                   !isConfirming ? "Crie um PIN" : "Confirme o PIN",
                   style: AppTextStyles.title,
@@ -97,7 +97,7 @@ class _SetPinPageState extends State<SetPinPage> {
                 ),
                 const SizedBox(height: 8),
 
-                /// Descrição
+                /// descrição
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Text(
@@ -110,7 +110,7 @@ class _SetPinPageState extends State<SetPinPage> {
                 ),
                 const SizedBox(height: 48),
 
-                /// Pontinhos do PIN
+                /// pontinhos do PIN
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(4, (i) {
@@ -132,7 +132,7 @@ class _SetPinPageState extends State<SetPinPage> {
                   }),
                 ),
 
-                /// Mensagem de erro
+                /// mensagem de erro
                 if (errorMessage != null)
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
@@ -158,7 +158,7 @@ class _SetPinPageState extends State<SetPinPage> {
 
                 const SizedBox(height: 48),
 
-                /// Teclado numérico
+                /// teclado numerico
                 PinKeypad(onNumberSelected: _updatePin, onDelete: _removePin),
 
                 const SizedBox(height: 40),

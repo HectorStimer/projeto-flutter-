@@ -117,7 +117,7 @@ class _MedicalFormPageState extends State<MedicalFormPage> {
                   ),
                   const SizedBox(height: 16),
 
-                  /// Idade e Tipo Sanguíneo (lado a lado)
+                  /// idade e tipo Sanguíneo (lado a lado)
                   Row(
                     children: [
                       Expanded(

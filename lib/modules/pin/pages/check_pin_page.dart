@@ -93,11 +93,11 @@ class _CheckPinPageState extends State<CheckPinPage> {
               children: [
                 const SizedBox(height: 40),
 
-                /// Logo
+                /// logo
                 Icon(Icons.lock, size: 80, color: AppColors.primary),
                 const SizedBox(height: 24),
 
-                /// Título
+                /// título
                 Text(
                   "Digite seu PIN",
                   style: AppTextStyles.title,
@@ -105,7 +105,7 @@ class _CheckPinPageState extends State<CheckPinPage> {
                 ),
                 const SizedBox(height: 8),
 
-                /// Descrição
+                /// descrição
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Text(
@@ -116,7 +116,7 @@ class _CheckPinPageState extends State<CheckPinPage> {
                 ),
                 const SizedBox(height: 48),
 
-                /// Pontinhos do PIN
+                /// pontinhos do PIN
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(4, (i) {
@@ -138,7 +138,7 @@ class _CheckPinPageState extends State<CheckPinPage> {
                   }),
                 ),
 
-                /// Mensagem de erro
+                /// mensagem de erro
                 if (errorMessage != null)
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
@@ -164,7 +164,7 @@ class _CheckPinPageState extends State<CheckPinPage> {
 
                 const SizedBox(height: 48),
 
-                /// Teclado numérico
+                /// teclado numerico
                 PinKeypad(onNumberSelected: _updatePin, onDelete: _removePin),
 
                 const SizedBox(height: 40),
